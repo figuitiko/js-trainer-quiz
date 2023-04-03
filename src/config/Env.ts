@@ -19,6 +19,9 @@ class Environment {
     getPort(): number {
         return Number(process.env.PORT);
     }
+    getSecretJWT(): string {
+        return String(process.env.JWT_SECRET);
+    }
     getDatabaseUrl(): string {
         return String(process.env.DATABASE_URL+'/'+ process.env.DATABASE_NAME);
     }
