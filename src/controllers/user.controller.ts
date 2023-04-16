@@ -1,7 +1,8 @@
 import { notFound } from './../services/user-services/util';
 import { Request, Response } from "express";
-import userServices from "../services/user-services/service";
+import userServices from "../services/user-services/user.services";
 const { loginService, registerServices } = userServices();
+
 const userController = () => {
     const getUser = (req: Request, res: Response) => {
         res.json({ message: "Hello World" });
@@ -13,7 +14,7 @@ const userController = () => {
             if(!user) return res.status(400).json({ok: false, error: "wrong password"});
             return res.status(200).json({ok: true, user, token});
         } catch (error) {
-            return 
+            return Promise.reject(error);
         }
     }
     const signUp = async (req: Request, res: Response) => {

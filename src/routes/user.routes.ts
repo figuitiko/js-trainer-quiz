@@ -1,7 +1,7 @@
 import express from 'express';
+const router = express.Router();
 import  UserController  from '../controllers/user.controller';
 const {getUser, login, signUp} = UserController();
-const router = express.Router();
 
 router.get('/api/users', getUser);
 router.post('/api/users/login', login);

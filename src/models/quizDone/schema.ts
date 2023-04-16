@@ -11,6 +11,15 @@ const schema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
+  currentQuestion: Number,
+  isActive: {
+    type: Boolean,
+    default: false,
+  },
+  isDone:{
+    type: Boolean,
+    default: false,
+  },
   results: Number,
 });
 export default schema;

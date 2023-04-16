@@ -19,7 +19,7 @@ const userServices = () => {
       if(!token) return { ok: false, error: "no token"};
       return { user: foundUser,  token }      
     } catch (error) {      
-      return { ok: false, error: "wrong password"}
+      return { ok: false, error: "some auth error"}
     }
   }
   const registerServices = async ({email,name, password}: Pick<IUser, 'email'| 'name'| 'password' >) => {
